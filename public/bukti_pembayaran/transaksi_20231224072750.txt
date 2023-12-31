@@ -1,0 +1,6 @@
+user ID : 300084390406
+password : 45de6c6a06fo
+
+http://etax.dispenda.badungkab.go.id/
+http://etax.bapenda.badungkab.go.id:8090/cti/authentication/login
+https://epalapa.badungkab.go.id/signin
