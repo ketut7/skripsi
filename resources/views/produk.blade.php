@@ -16,7 +16,7 @@
                                     <img class="card-img rounded-0 img-fluid" src="{{ $item->gambar_url }}">
                                     <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                         <ul class="list-unstyled">
-                                            <li><a class="btn btn-success text-white mt-2" href="{{ route('produk.show', [$item->id]) }}"><i class="far fa-eye"></i></a></li>
+                                            <li><a class="btn btn-success text-white mt-2" href="{{ route('product.show', [$item->id]) }}"><i class="far fa-eye"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                             <p class="mb-0">Rp.{{ number_format($item->harga) }}</p>
                                         </div>
                                         <div class="col-4 text-end">
-                                            <a href="{{ route('produk.show', [$item->id]) }}" class="btn btn-success btn-sm ">Detail</a>
+                                            <a href="{{ route('product.show', [$item->id]) }}" class="btn btn-success btn-sm ">Detail</a>
                                         </div>
                                     </div>
 

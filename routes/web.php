@@ -30,7 +30,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::resource('/produk', ProdukController::class);
+Route::resource('/product', ProdukController::class);
 Route::get('/login', [AuthenticationController::class, 'login'])->name('login');
 Route::get('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 Route::post('/login', [AuthenticationController::class, 'loginAction']);
