@@ -10,7 +10,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted font-weight-medium">Jumlah Produk</p>
-                                        <h4 class="mb-0">19</h4>
+                                        <h4 class="mb-0">{{ $summary['total_produk'] }}</h4>
                                     </div>
                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                         <span class="avatar-title">
@@ -27,7 +27,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted font-weight-medium">Jumlah Transaksi Hari Ini</p>
-                                        <h4 class="mb-0">19</h4>
+                                        <h4 class="mb-0">{{ $summary['jumlah_transaksi'] }}</h4>
                                     </div>
                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                         <span class="avatar-title">
@@ -44,7 +44,7 @@
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted font-weight-medium">Total Transaksi Hari Ini</p>
-                                        <h4 class="mb-0">19</h4>
+                                        <h4 class="mb-0">{{ $summary['total_transaksi'] }}</h4>
                                     </div>
                                     <div class="mini-stat-icon avatar-sm rounded-circle bg-primary align-self-center">
                                         <span class="avatar-title">

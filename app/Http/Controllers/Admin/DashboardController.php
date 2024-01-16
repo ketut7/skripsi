@@ -19,9 +19,21 @@ class DashboardController extends Controller
 
         $produk = Produk::query()
             ->orderBy('created_at', 'desc')
-            ->get()
-            ->take(5);
+            ->get();
 
-        return view('admin.dashboard', compact('transaksi', 'produk'));
+        $transactionToday = Transaksi::query()
+            ->whereDate('created_at', date('Y-m-d'))
+            ->get();
+
+        $summary = [
+            'total_produk' => $produk->count(),
+            'jumlah_transaksi' => $transactionToday->count(),
+            'total_transaksi' => $transactionToday->sum('total_harga'),
+
+        ];
+
+        $produk = $produk->take(5);
+
+        return view('admin.dashboard', compact('transaksi', 'produk', 'summary'));
     }
 }
