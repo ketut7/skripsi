@@ -28,33 +28,40 @@
                             @if($errors->any())
                                 {{ implode('', $errors->all('<div>:message</div>')) }}
                             @endif
-                            <form method="POST" action="{{ route('tambah_keranjang') }}">
-                                @csrf
-                                <input type="hidden" name="product-title" value="Activewear">
-                                <div class="row">
-                                    <div class="col-auto">
-                                        <ul class="list-inline pb-3">
-                                            <li class="list-inline-item text-right">
-                                                Quantity
-                                                <input type="hidden" name="jumlah" id="product-quantity" value="1">
-                                                <input type="hidden" name="produk_id" value="{{ $produk->id }}">
-                                            </li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-minus" onclick="updateQuantityValue('minus')">-</span></li>
-                                            <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
-                                            <li class="list-inline-item"><span class="btn btn-success" id="btn-plus" onclick="updateQuantityValue('plus')">+</span></li>
-                                        </ul>
+                            @if(auth()->user())
+                                <form method="POST" action="{{ route('tambah_keranjang') }}">
+                                    @csrf
+                                    <input type="hidden" name="product-title" value="Activewear">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <ul class="list-inline pb-3">
+                                                <li class="list-inline-item text-right">
+                                                    Quantity
+                                                    <input type="hidden" name="jumlah" id="product-quantity" value="1">
+                                                    <input type="hidden" name="produk_id" value="{{ $produk->id }}">
+                                                </li>
+                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-minus" onclick="updateQuantityValue('minus')">-</span></li>
+                                                <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-plus" onclick="updateQuantityValue('plus')">+</span></li>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    <div class="row pb-3">
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="bayar">Buy</button>
+                                        </div>
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="tambah-keranjang">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            @else
+                                <div class="alert alert-info">
+                                    <ul>
+                                        <li>Silahkan <a href="{{ route('login') }}">Login</a> untuk melakukan transaksi</li>
+                                    </ul>
                                 </div>
-                                <div class="row pb-3">
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="bayar">Buy</button>
-                                    </div>
-                                    <div class="col d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="tambah-keranjang">Add To Cart</button>
-                                    </div>
-                                </div>
-                            </form>
-
+                            @endif
                         </div>
                     </div>
                 </div>
