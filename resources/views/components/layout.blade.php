@@ -68,6 +68,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact</a>
                             </li>
+                            @if(auth()->user())
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('transaksi.index') }}">Transaksi</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>
                     <div class="navbar align-self-center d-flex">
